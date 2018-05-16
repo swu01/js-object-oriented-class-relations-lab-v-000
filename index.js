@@ -3,14 +3,14 @@
 //one passenger associated with trip//
 
 let driverId = 0;
-
+let passengerId = 0;
 let store = {drivers: [], passengers: [], trips: []};
 
 class Driver {
   constructor(name) {
     this.id = ++driverId;
     this.name = name;
-    store.drivers.push(this)
+    store.drivers.push(this);
   }
   trips() {
       return store.trips.filter(trip => trip.driverId === this.id)
@@ -21,10 +21,15 @@ class Driver {
 }
 
 class Passenger {
-  
+  constructor(name) {
+    this.id = ++passenderId
+    this.name = name;
+    store.drivers.push(this);
+    
+  }
+
 }
 
 class Trip {
-  
-}
 
+}
