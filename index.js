@@ -25,9 +25,13 @@ class Passenger {
     this.id = ++passenderId
     this.name = name;
     store.drivers.push(this);
-    
   }
-
+  trips() {
+    return store.trips.filter(trip => trip.passenderId === this.id);
+  }
+  drivers() {
+    return this.trips().map(trip => trip.driver());
+  }
 }
 
 class Trip {
